@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drag-and-Drop Form-Builder</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="builder-container">
+        <!-- left section  -->
+        <div class="toolbox">
+            <h3>Form Elements</h3>
+
+            <div class="draggable" draggable="true" data-type="big-heading">Big Heading</div>
+            <div class="draggable" draggable="true" data-type="small-heading">Small Heading</div>
+            <div class="draggable" draggable="true" data-type="paragraph">Paragraph</div>
+
+
+            <div class="draggable" draggable="true" data-type="text">Text Input</div>
+            <div class="draggable" draggable="true" data-type="textarea">Test Area</div>
+
+            
+            <div class="draggable" draggable="true" data-type="select">Select Option</div>
+            <div class="draggable" draggable="true" data-type="radio">Radio Group</div>
+            <div class="draggable" draggable="true" data-type="checkbox">Checkbox Group</div>
+            
+        </div>
+
+        <!-- right section  -->
+         <div class="form-builder" id="form-builder">
+            <h3>Build Your Form</h3>
+         </div>
+    </div>
+
+    <div class="modal-overlay d-none">
+      <div class="modal-box">
+        <p>Are you sure you want submit the?</p>
+        <div class="modal-actions">
+          <button class="modal-btn cancel-delete">Yes</button>
+          <button class="modal-btn confirm-delete">No</button>
+        </div>
+      </div>
+    </div>
+</body>
+<script src="script.js"></script>
+</html>

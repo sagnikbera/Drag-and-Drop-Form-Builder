@@ -1,0 +1,243 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Orbitron:wght@400..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Rubik+Glitch&display=swap');
+
+:root {
+    --col1 : #42135c;
+    --col2 : #7c5d8e;
+    --col3 : #ffffff;
+    --col4 : antiquewhite;
+    --font1 : "Roboto Mono" , monospace;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--font1);
+}
+
+body {
+    display: flex;
+    background-color: var(--col1);
+}
+
+.builder-container {
+    background-color: var(--col1);
+    display: flex;
+    width: 100%;
+    height: 100vh;
+}
+
+.toolbox {
+    flex: 1;
+    padding: 20px;
+    border-right: 1px solid gray;
+    box-shadow: 0 0 10px rgbs(0,0,0,0.1);
+}
+
+.toolbox h3 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 30px;
+    color: var(--col2);
+}
+
+.toolbox .draggable {
+    padding: 10px;
+    margin: 10px 0;
+    background-color: var(--col2);
+    color: var(--col3);
+    text-align: center;
+    cursor: pointer;
+    border-radius: 5px;
+    border: 1px solid var(--col3);
+    font-weight: bold;
+}
+
+.toolbox .draggable:hover {
+    background-color: var(--col3);
+    color: var(--col2);
+    border: 1px solid var(--col2);
+}
+
+.dragging{
+    opacity : 0.5;
+    border: 2px dashed var(--col2);
+}
+
+.form-builder{
+    flex: 4;
+    padding: 20px;
+    background-color: var(--col2);
+    overflow: scroll;
+}
+
+.form-builder h3 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 30px;
+    color: var(--col2);
+    background-color: var(--col1);
+    padding: 10px;
+}
+
+.form-element{
+    margin: 20px 0;
+    background-color: var(--col1);
+    padding: 20px;
+}
+
+.form-element input{
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+.form-element textarea{
+    width: 100%;
+    min-height: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.label-edit{
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.BigDiv , .SmallDiv , .ParagraphDiv{
+    display: flex;
+    align-items: center;
+
+}
+
+.BigDiv input , .SmallDiv input , .ParagraphDiv input{
+    width: 100%;
+    padding: 4px;
+    margin-top: 5px;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: transparent;
+    color:var(--col4);
+}
+
+.BigDiv input {
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.SmallDiv input {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.ParagraphDiv input{
+    font-size: 18px;
+}
+
+.form-element .option-container{
+    margin-bottom: 10px;
+}
+
+.option-edit {
+    display: flex;
+    width: 70%;
+    margin-bottom: 10px;
+    align-items: center;
+    gap: 10px;
+}
+
+.option-edit input{
+    flex-grow: 1;
+    background-color: var(--col3);
+    color: var(--col2);
+    font-weight: bold;
+}
+
+.form-element button{
+    padding: 15px 20px;
+    border: none;
+    color: white;
+    cursor: pointer;
+    margin-right: 10px;
+    margin-left: 10px;
+    border-radius: 5px;
+}
+
+.delete-button{
+    background-color: #e74c3c;
+}
+
+.add-button{
+    background-color: rgba(8, 131, 8, 0.879);
+}
+
+.submit-button{
+    padding: 20px 30px;
+    font-size: 18px;
+    border: none;
+    color: white;
+    cursor: pointer;
+    margin-right: 10px;
+    border-radius: 5px;
+    background-color: rgba(8, 131, 8, 0.879);
+    font-weight: bold;
+}
+
+.d-none {
+    display: none !important;
+}
+
+.confirm-delete {
+  background-color: #e74c3c;
+  color: white;
+}
+
+.cancel-delete {
+  background-color: rgba(8, 131, 8, 0.879);
+  color: white;
+}
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+
+.modal-box {
+    background-color: var(--col3);
+    padding: 30px 50px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.modal-actions {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.modal-btn {
+    font-weight: bold;
+    padding: 15px 25px;
+    cursor: pointer;
+    border: none;
+    color: white;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
